@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/abc.css">
+</head>
+<body>
+    <%-include('common/nav') %>
+    <h1 class="myheading" align="center">Add Product</h1>
+
+    <center>
+        <form action="/Add_Product" method="post" enctype="multipart/form-data">
+            Name:<input type="text" name="name" required><br><br>
+            Price:<input type="number" name="price" required><br><br>
+            photo:<input type="file" name="photo" required><br><br>
+            Description:<textarea name="description" required></textarea><br><br>
+            <button>Add-Product</button>
+        </form>
+        <% if(locals.message)
+        {
+            %>
+            <h3><%=message %></h3>
+       <% } %>
+    </center> 
+</body>
+</html>
